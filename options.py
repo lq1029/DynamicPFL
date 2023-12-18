@@ -1,5 +1,6 @@
 import argparse
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description="")
 
@@ -14,9 +15,11 @@ def parse_args():
     parser.add_argument('--target_delta', type=float, default=1e-1, help="Target privacy budget delta")
     parser.add_argument('--clipping_bound', type=float, default=0.5, help="Gradient clipping bound")
 
-    parser.add_argument('--fisher_threshold', type=float, default=0.4, help="Fisher information threshold for parameter selection")
+    parser.add_argument('--fisher_threshold', type=float, default=0.4,
+                        help="Fisher information threshold for parameter selection")
     parser.add_argument('--lambda_1', type=float, default=0.1, help="Lambda value for EWC regularization term")
-    parser.add_argument('--lambda_2', type=float, default=0.05, help="Lambda value for regularization term to control the update magnitude")
+    parser.add_argument('--lambda_2', type=float, default=0.05,
+                        help="Lambda value for regularization term to control the update magnitude")
 
     parser.add_argument('--device', type=int, default=0, help='Set the visible CUDA device for calculations')
 
@@ -34,8 +37,6 @@ def parse_args():
     parser.add_argument('--store', action='store_true')
 
     parser.add_argument('--appendix', type=str, default='')
-
-
 
     args = parser.parse_args()
     return args
